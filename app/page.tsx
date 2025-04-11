@@ -1,101 +1,302 @@
-import Image from "next/image";
+"use client"
+
+import { ModeToggle } from "@/components/mode-toggle"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Github, ExternalLink, Mail, Linkedin } from "lucide-react"
+import Link from "next/link"
+import Image from "next/image"
+import * as React from "react"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogClose,
+} from "@/components/ui/dialog"
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-background">
+      {/* Header */}
+      <header className="container mx-auto py-6 px-4 flex justify-between items-center">
+        <h1 className="text-2xl font-bold">
+          <Link href="/">
+            Dev<span className="text-primary">Portfolio</span>
+          </Link>
+        </h1>
+        <div className="flex items-center gap-4">
+          <nav className="hidden md:flex gap-6">
+            <Link href="#about" className="hover:text-primary transition-colors">
+              About
+            </Link>
+            <Link href="#skills" className="hover:text-primary transition-colors">
+              Skills
+            </Link>
+            <Link href="#projects" className="hover:text-primary transition-colors">
+              Projects
+            </Link>
+            <Link href="#contact" className="hover:text-primary transition-colors">
+              Contact
+            </Link>
+          </nav>
+          <ModeToggle />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </header>
+
+      {/* Hero Section */}
+      <section className="container mx-auto py-20 px-4 flex flex-col md:flex-row items-center gap-12 relative overflow-hidden">
+        {/* Video Background */}
+        <div className="absolute inset-0 -z-10 w-full h-full overflow-hidden">
+          <video autoPlay muted loop playsInline className="w-full h-full object-cover opacity-20" aria-hidden="true">
+            <source src="/placeholder-video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div className="absolute inset-0 bg-background/70 backdrop-blur-sm"></div>
+        </div>
+        <div className="flex-1 z-10">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+            Hi, I am <span className="text-primary">Your Name</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8">
+            Frontend Developer specializing in React & Next.js
+          </p>
+          <div className="flex gap-4">
+            <Button asChild>
+              <Link href="#contact">Contact Me</Link>
+            </Button>
+            <Button variant="outline" asChild>
+              <Link href="#projects">View Projects</Link>
+            </Button>
+          </div>
+        </div>
+        <div className="flex-1 flex justify-center z-10">
+          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary">
+            <Image src="/placeholder.svg?height=320&width=320" alt="Profile" fill className="object-cover" priority />
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="bg-muted py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-12 text-center">About Me</h2>
+          <div className="max-w-3xl mx-auto">
+            <p className="text-lg mb-6">
+              I am a passionate frontend developer with a strong foundation in modern web technologies. I enjoy building
+              responsive, user-friendly interfaces and solving complex problems with clean, efficient code.
+            </p>
+            <p className="text-lg">
+              When I am not coding, you can find me exploring new technologies, contributing to open-source projects, or
+              enjoying outdoor activities.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section id="skills" className="py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-12 text-center">My Skills</h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            <SkillCard name="HTML5" icon="/html5.png" certificateUrl="/certificates/html-certificate.jpg" />
+            <SkillCard name="CSS3" icon="/css.png" certificateUrl="/certificates/html-certificate.jpg" />
+            <SkillCard name="JavaScript" icon="/javascript.png" certificateUrl="/certificates/coming soon.png" />
+            <SkillCard name="React" icon="/react.png" certificateUrl="/certificates/coming soon.png" />
+            <SkillCard name="Svelte" icon="/svelte.png" certificateUrl="/certificates/coming soon.png" />
+            <SkillCard name="Node.js" icon="/nodejs.png" certificateUrl="/certificates/coming soon.png" />
+            <SkillCard name="Firebase" icon="/firebase.png" certificateUrl="/certificates/coming soon.png" />
+            <SkillCard name="GitHub" icon="/github.png" certificateUrl="/certificates/coming soon.png" />
+            {/* Space for future skills */}
+            <div className="col-span-2 md:col-span-3 lg:col-span-5 mt-6">
+              <p className="text-center text-muted-foreground">More skills coming soon...</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="bg-muted py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-12 text-center">My Projects</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <ProjectCard
+              title="Project One"
+              description="A responsive web application built with React and Next.js"
+              image="/placeholder.svg?height=200&width=400"
+              tags={["React", "Next.js", "Tailwind"]}
+              githubUrl="#"
+              liveUrl="#"
+            />
+            <ProjectCard
+              title="Project Two"
+              description="An interactive dashboard with data visualization"
+              image="/placeholder.svg?height=200&width=400"
+              tags={["Svelte", "D3.js", "CSS"]}
+              githubUrl="#"
+              liveUrl="#"
+            />
+            <ProjectCard
+              title="Project Three"
+              description="A mobile-first e-commerce website"
+              image="/placeholder.svg?height=200&width=400"
+              tags={["HTML", "CSS", "JavaScript"]}
+              githubUrl="#"
+              liveUrl="#"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-12 text-center">Get In Touch</h2>
+          <div className="max-w-md mx-auto flex flex-col gap-6">
+            <Button className="flex items-center gap-2" asChild>
+              <a href="mailto:your.email@example.com">
+                <Mail className="h-5 w-5" />
+                your.email@example.com
+              </a>
+            </Button>
+            <Button variant="outline" className="flex items-center gap-2" asChild>
+              <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+                <Github className="h-5 w-5" />
+                GitHub Profile
+              </a>
+            </Button>
+            <Button variant="outline" className="flex items-center gap-2" asChild>
+              <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+                <Linkedin className="h-5 w-5" />
+                LinkedIn Profile
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-muted py-8">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-muted-foreground">© {new Date().getFullYear()} Your Name. All rights reserved.</p>
+        </div>
       </footer>
     </div>
-  );
+  )
 }
+
+function SkillCard({
+  name,
+  icon,
+  certificateUrl,
+}: {
+  name: string
+  icon: string
+  certificateUrl: string
+}) {
+  const [isOpen, setIsOpen] = React.useState(false)
+
+  return (
+    <>
+      <Card
+        className="text-center hover:border-primary transition-all duration-300 transform hover:-translate-y-2 hover:shadow-lg cursor-pointer group"
+        onClick={() => setIsOpen(true)}
+      >
+        <CardHeader>
+          <div className="relative w-16 h-16 mx-auto mb-2 transition-transform duration-300 transform group-hover:scale-110">
+            <Image src={icon || "/placeholder.svg"} alt={name} fill className="object-contain" />
+          </div>
+          <CardTitle>{name}</CardTitle>
+        </CardHeader>
+      </Card>
+
+      <Dialog open={isOpen} onOpenChange={setIsOpen}>
+        <DialogContent className="max-w-4xl w-[90vw]">
+          <DialogHeader>
+            <DialogTitle>{name} Certificate</DialogTitle>
+            <DialogDescription>My certification for {name} skills and knowledge.</DialogDescription>
+          </DialogHeader>
+          <div className="relative w-full h-[70vh] mt-4">
+            <Image
+              src={certificateUrl || "/placeholder.svg"}
+              alt={`${name} Certificate`}
+              fill
+              className="object-contain"
+              sizes="(max-width: 768px) 90vw, 70vw"
+            />
+          </div>
+          <DialogFooter className="sm:justify-start">
+            <Button type="button" variant="outline" asChild className="mr-2">
+              <a href={certificateUrl} target="_blank" rel="noopener noreferrer">
+                <ExternalLink className="h-4 w-4 mr-2" />
+                View Full Size
+              </a>
+            </Button>
+            <DialogClose asChild>
+              <Button type="button" variant="secondary">
+                Close
+              </Button>
+            </DialogClose>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+    </>
+  )
+}
+
+function ProjectCard({
+  title,
+  description,
+  image,
+  tags,
+  githubUrl,
+  liveUrl,
+}: {
+  title: string
+  description: string
+  image: string
+  tags: string[]
+  githubUrl: string
+  liveUrl: string
+}) {
+  return (
+    <Card className="overflow-hidden flex flex-col h-full">
+      <div className="relative h-48 w-full">
+        <Image src={image || "/placeholder.svg"} alt={title} fill className="object-cover" />
+      </div>
+      <CardHeader>
+        <CardTitle>{title}</CardTitle>
+        <CardDescription>{description}</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <div className="flex flex-wrap gap-2">
+          {tags.map((tag) => (
+            <Badge key={tag} variant="secondary">
+              {tag}
+            </Badge>
+          ))}
+        </div>
+      </CardContent>
+      <CardFooter className="mt-auto">
+        <div className="flex gap-4">
+          <Button size="sm" variant="outline" asChild>
+            <a href={githubUrl} target="_blank" rel="noopener noreferrer">
+              <Github className="h-4 w-4 mr-2" />
+              Code
+            </a>
+          </Button>
+          <Button size="sm" asChild>
+            <a href={liveUrl} target="_blank" rel="noopener noreferrer">
+              <ExternalLink className="h-4 w-4 mr-2" />
+              Live
+            </a>
+          </Button>
+        </div>
+      </CardFooter>
+    </Card>
+  )
+}
+
