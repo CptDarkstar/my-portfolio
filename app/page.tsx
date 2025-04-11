@@ -90,7 +90,7 @@ export default function Home() {
               responsive, user-friendly interfaces and solving complex problems with clean, efficient code.
             </p>
             <p className="text-lg">
-              When I am not coding, you can find me exploring new technologies, contributing to open-source projects, or
+              When I am not coding, you can find me exploring new technologies, working on personal projects, or
               enjoying outdoor activities.
             </p>
           </div>
@@ -105,10 +105,11 @@ export default function Home() {
             <SkillCard name="HTML5" icon="/html5.png" certificateUrl="/certificates/html-certificate.jpg" />
             <SkillCard name="CSS3" icon="/css.png" certificateUrl="/certificates/html-certificate.jpg" />
             <SkillCard name="JavaScript" icon="/javascript.png" certificateUrl="/certificates/coming soon.png" />
-            <SkillCard name="React" icon="/react.png" certificateUrl="/certificates/coming soon.png" />
+            <SkillCard name="TypeScript" icon="/typescript.png" certificateUrl="/certificates/coming soon.png" />
             <SkillCard name="Svelte" icon="/svelte.png" certificateUrl="/certificates/coming soon.png" />
-            <SkillCard name="Node.js" icon="/nodejs.png" certificateUrl="/certificates/coming soon.png" />
+            <SkillCard name="React" icon="/react.png" certificateUrl="/certificates/coming soon.png" />
             <SkillCard name="Firebase" icon="/firebase.png" certificateUrl="/certificates/coming soon.png" />
+            <SkillCard name="Node.js" icon="/nodejs.png" certificateUrl="/certificates/coming soon.png" />
             <SkillCard name="GitHub" icon="/github.png" certificateUrl="/certificates/coming soon.png" />
             {/* Space for future skills */}
             <div className="col-span-2 md:col-span-3 lg:col-span-5 mt-6">
@@ -127,7 +128,7 @@ export default function Home() {
               title="Project One"
               description="A responsive web application built with React and Next.js"
               image="/placeholder.svg?height=200&width=400"
-              tags={["React", "Next.js", "Tailwind"]}
+              tags={["Svelte", "Firebase", "SMUI", "Node.js"]}
               githubUrl="#"
               liveUrl="#"
             />
