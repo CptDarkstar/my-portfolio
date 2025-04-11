@@ -59,7 +59,7 @@ export default function Home() {
         </div>
         <div className="flex-1 z-10">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            Hi, I am <span className="text-primary">Your Name</span>
+            Hi, I am <span className="text-primary">Eckhardt Van Der Poel</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8">
             Frontend Developer specializing in React & Next.js
@@ -75,7 +75,7 @@ export default function Home() {
         </div>
         <div className="flex-1 flex justify-center z-10">
           <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary">
-            <Image src="/placeholder.svg?height=320&width=320" alt="Profile" fill className="object-cover" priority />
+            <Image src="/TLR-25.png" alt="Profile" fill className="object-cover" priority />
           </div>
         </div>
       </section>
@@ -159,11 +159,11 @@ export default function Home() {
             <Button className="flex items-center gap-2" asChild>
               <a href="mailto:your.email@example.com">
                 <Mail className="h-5 w-5" />
-                your.email@example.com
+                cpt.darkstar1@gmail.com
               </a>
             </Button>
             <Button variant="outline" className="flex items-center gap-2" asChild>
-              <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/CptDarkstar/" target="_blank" rel="noopener noreferrer">
                 <Github className="h-5 w-5" />
                 GitHub Profile
               </a>
@@ -181,7 +181,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-muted py-8">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-muted-foreground">© {new Date().getFullYear()} Your Name. All rights reserved.</p>
+          <p className="text-muted-foreground">© {new Date().getFullYear()} All rights reserved.</p>
         </div>
       </footer>
     </div>
