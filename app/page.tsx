@@ -129,8 +129,8 @@ export default function Home() {
               description="A responsive web application built with React and Next.js"
               image="/placeholder.svg?height=200&width=400"
               tags={["Svelte", "Firebase", "SMUI", "Node.js"]}
-              githubUrl="#"
-              liveUrl="#"
+              githubUrl="https://github.com/CptDarkstar/agm-demo"
+              liveUrl="https://agm-demo.vercel.app"
             />
             <ProjectCard
               title="Project Two"
