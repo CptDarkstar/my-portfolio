@@ -125,10 +125,10 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-12 text-center">My Projects</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <ProjectCard
-              title="Project One"
-              description="A responsive web application built with React and Next.js"
-              image="/placeholder.svg?height=200&width=400"
-              tags={["Svelte", "Firebase", "SMUI", "Node.js"]}
+              title="Shareholder Voting App for AGMs"
+              description="A modern, secure web application designed specifically for businesses to manage shareholder voting during Annual General Meetings (AGMs)."
+              image="/pro1.png?height=200&width=400"
+              tags={["Svelte", "Firebase", "SMUI", "JavaScript", "Node.js"]}
               githubUrl="https://github.com/CptDarkstar/agm-demo"
               liveUrl="https://agm-demo.vercel.app"
             />
