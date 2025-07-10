@@ -133,12 +133,12 @@ export default function Home() {
               liveUrl="https://agm-demo.vercel.app"
             />
             <ProjectCard
-              title="Project Two"
-              description="An interactive dashboard with data visualization"
-              image="/placeholder.svg?height=200&width=400"
-              tags={["Svelte", "D3.js", "CSS"]}
-              githubUrl="#"
-              liveUrl="#"
+              title="Landing Page for a Bond Orginator"
+              description="A modern, responsive landing page for a bond orginator."
+              image="/pro2.png?height=200&width=400"
+              tags={["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"]}
+              githubUrl="https://github.com/CptDarkstar/home-loan-process"
+              liveUrl="https://home-loan-process.vercel.app"
             />
             <ProjectCard
               title="Project Three"
