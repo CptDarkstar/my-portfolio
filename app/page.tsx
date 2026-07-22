@@ -111,6 +111,7 @@ export default function Home() {
             <SkillCard name="Firebase" icon="/firebase.png" certificateUrl="/certificates/coming soon.png" />
             <SkillCard name="Node.js" icon="/nodejs.png" certificateUrl="/certificates/coming soon.png" />
             <SkillCard name="GitHub" icon="/github.png" certificateUrl="/certificates/coming soon.png" />
+            <SkillCard name="Azure Ai" icon="/microsoft-certified-fundamentals-badge.svg" certificateUrl="/certificates/AI-901.png" />
             {/* Space for future skills */}
             <div className="col-span-2 md:col-span-3 lg:col-span-5 mt-6">
               <p className="text-center text-muted-foreground">More skills coming soon...</p>
