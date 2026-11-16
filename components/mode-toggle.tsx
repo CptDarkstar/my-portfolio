@@ -23,6 +23,8 @@ export function ModeToggle() {
     )
   }
 
+/* Fixed Bug */
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
